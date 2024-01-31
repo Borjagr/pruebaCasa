@@ -25,13 +25,13 @@ jobs:
           echo "Login exitoso"
       - name: Build
         run: |
-          docker build -t ${{ secrets.DOCKER_USER }}/pruebaCasa:${{ github.sha }} .
+          docker build -t ${{ secrets.DOCKER_USER }}/pruebacasa:${{ github.sha }} .
           echo "Imagen generada de histórico"
-          docker build -t ${{ secrets.DOCKER_USER }}/pruebaCasa:latest .
+          docker build -t ${{ secrets.DOCKER_USER }}/pruebacasa:latest .
           echo "Imagen generada de última versión"
       - name: Push
         run: |
-          docker push ${{ secrets.DOCKER_USER }}/pruebaCasa:${{ github.sha }}
+          docker push ${{ secrets.DOCKER_USER }}/pruebacasa:${{ github.sha }}
           echo "Histórico guardado"
-          docker push ${{ secrets.DOCKER_USER }}/pruebaCasa:latest
+          docker push ${{ secrets.DOCKER_USER }}/pruebacasa:latest
           echo "Última versión subida"
